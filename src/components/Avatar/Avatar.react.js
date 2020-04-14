@@ -34,6 +34,8 @@ export type Props = {|
    * The background and font color of the circle
    */
   +color?: string,
+
+  +title?: string,
 |};
 
 /**
@@ -54,6 +56,7 @@ function Avatar({
   onMouseLeave,
   onPointerEnter,
   onPointerLeave,
+  title,
 }: Props): React.Node {
   const classes = cn(
     {
@@ -82,6 +85,7 @@ function Avatar({
       onMouseLeave={onMouseLeave}
       onPointerEnter={onPointerEnter}
       onPointerLeave={onPointerLeave}
+      title={title}
     >
       {icon && <Icon name={icon} />}
       {status && <span className={`avatar-status bg-${status}`} />}
